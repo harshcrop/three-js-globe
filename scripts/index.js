@@ -33,30 +33,30 @@ async function preload() {
 function setup(app) {
   const controllers = [];
 
-  app.addControlGui((gui) => {
-    const colorFolder = gui.addFolder("Colors");
-    controllers.push(colorFolder.addColor(config.colors, "globeDotColor"));
-    controllers.push(colorFolder.addColor(config.colors, "globeMarkerColor"));
-    controllers.push(colorFolder.addColor(config.colors, "globeMarkerGlow"));
-    controllers.push(colorFolder.addColor(config.colors, "globeLines"));
-    controllers.push(colorFolder.addColor(config.colors, "globeLinesDots"));
+  // app.addControlGui((gui) => {
+  //   const colorFolder = gui.addFolder("Colors");
+  //   controllers.push(colorFolder.addColor(config.colors, "globeDotColor"));
+  //   controllers.push(colorFolder.addColor(config.colors, "globeMarkerColor"));
+  //   controllers.push(colorFolder.addColor(config.colors, "globeMarkerGlow"));
+  //   controllers.push(colorFolder.addColor(config.colors, "globeLines"));
+  //   controllers.push(colorFolder.addColor(config.colors, "globeLinesDots"));
 
-    const sizeFolder = gui.addFolder("Sizes");
-    controllers.push(sizeFolder.add(config.sizes, "globeDotSize", 1, 5));
-    controllers.push(sizeFolder.add(config.scale, "globeScale", 0.1, 1));
+  //   const sizeFolder = gui.addFolder("Sizes");
+  //   controllers.push(sizeFolder.add(config.sizes, "globeDotSize", 1, 5));
+  //   controllers.push(sizeFolder.add(config.scale, "globeScale", 0.1, 1));
 
-    const displayFolder = gui.addFolder("Display");
-    controllers.push(displayFolder.add(config.display, "map"));
-    controllers.push(displayFolder.add(config.display, "points"));
-    controllers.push(displayFolder.add(config.display, "markers"));
-    controllers.push(displayFolder.add(config.display, "markerLabel"));
-    controllers.push(displayFolder.add(config.display, "markerPoint"));
+  //   const displayFolder = gui.addFolder("Display");
+  //   controllers.push(displayFolder.add(config.display, "map"));
+  //   controllers.push(displayFolder.add(config.display, "points"));
+  //   controllers.push(displayFolder.add(config.display, "markers"));
+  //   controllers.push(displayFolder.add(config.display, "markerLabel"));
+  //   controllers.push(displayFolder.add(config.display, "markerPoint"));
 
-    const animationsFolder = gui.addFolder("Animations");
-    controllers.push(animationsFolder.add(animations, "rotateGlobe"));
+  //   const animationsFolder = gui.addFolder("Animations");
+  //   controllers.push(animationsFolder.add(animations, "rotateGlobe"));
 
-    sizeFolder.open();
-  });
+  //   sizeFolder.open();
+  // });
 
   controllers.forEach((controller) => {
     controller.onChange((event) => {
@@ -64,7 +64,7 @@ function setup(app) {
     });
   });
 
-  app.camera.position.z = config.sizes.globe * 2.85;
+  app.camera.position.z = config.sizes.globe * 2;
   app.camera.position.y = config.sizes.globe * 0;
   app.controls.enableDamping = true;
   app.controls.dampingFactor = 0.05;

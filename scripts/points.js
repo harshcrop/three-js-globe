@@ -78,7 +78,7 @@ class Points {
 
     const circle = new fabric.Circle({
       radius: radius / 2 - 2,
-      fill: 'blue',
+      fill: 'white',
       left: 1,
       top: 1
     })

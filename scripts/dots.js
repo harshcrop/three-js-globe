@@ -19,7 +19,7 @@ class Dots {
 
 class Dot {
 	constructor() {
-		this.radius = 2;
+		this.radius = 0.6;
 		this.segments = 32;
 		this.rings = 32;
 
