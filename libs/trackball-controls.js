@@ -3,10 +3,10 @@ THREE.TrackballControls = function (object, domElement) {
   var STATE = {
     NONE: -1,
     ROTATE: 0,
-    ZOOM: 1,
+    ZOOM: 0,
     PAN: 2,
     TOUCH_ROTATE: 3,
-    TOUCH_ZOOM_PAN: 4,
+    TOUCH_ZOOM_PAN: 0,
   };
 
   this.object = object;
@@ -23,16 +23,17 @@ THREE.TrackballControls = function (object, domElement) {
   this.panSpeed = 0.1;
 
   this.noRotate = true;
-  this.noZoom = true;
-  this.noPan = true;
+  this.noZoom = false;
+  this.noPan = false;
+  this.noKeys = false;
 
   this.staticMoving = false;
   this.dynamicDampingFactor = 0.2;
 
-  this.minDistance = 0;
-  this.maxDistance = Infinity;
+  // this.minDistance = 0;
+  // this.maxDistance = Infinity;
 
-  this.keys = [65 /*A*/, 83 /*S*/, 68 /*D*/];
+  // this.keys = [65 /*A*/, 83 /*S*/, 68 /*D*/];
 
   // internals
 
@@ -372,7 +373,7 @@ THREE.TrackballControls = function (object, domElement) {
   function mousewheel(event) {
     if (_this.enabled === false) return;
 
-    if (_this.noZoom === true) return;
+    if (_this.noZoom === false) return;
 
     event.preventDefault();
     event.stopPropagation();

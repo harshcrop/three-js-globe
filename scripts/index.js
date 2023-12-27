@@ -60,13 +60,13 @@ function setup(app) {
 
   controllers.forEach((controller) => {
     controller.onChange((event) => {
-      controls.changed = true;
+      controls.changed = false;
     });
   });
 
   app.camera.position.z = config.sizes.globe * 2;
   app.camera.position.y = config.sizes.globe * 0;
-  app.controls.enableDamping = true;
+  app.controls.enableDamping = false;
   app.controls.dampingFactor = 0.05;
   app.controls.rotateSpeed = 0.07;
 
