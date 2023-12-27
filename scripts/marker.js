@@ -1,9 +1,15 @@
 class Marker {
-  constructor(material, geometry, label, cords, {
-    textColor = 'white',
-    pointColor = config.colors.globeMarkerColor,
-    glowColor = config.colors.globeMarkerGlow
-  } = {}) {
+  constructor(
+    material,
+    geometry,
+    label,
+    cords,
+    {
+      textColor = "white",
+      pointColor = config.colors.globeMarkerColor,
+      glowColor = config.colors.globeMarkerGlow,
+    } = {}
+  ) {
     this.material = material;
     this.geometry = geometry;
     this.labelText = label;
@@ -16,7 +22,7 @@ class Marker {
     this.glowColor = new THREE.Color(glowColor);
 
     this.group = new THREE.Group();
-    this.group.name = 'Marker';
+    this.group.name = "Marker";
 
     this.createLabel();
     this.createPoint();
@@ -32,13 +38,13 @@ class Marker {
     texture.minFilter = THREE.LinearFilter;
     textures.markerLabels.push(texture);
 
-    const material = new THREE.SpriteMaterial()
+    const material = new THREE.SpriteMaterial();
     material.map = texture;
-    material.depthTest = false;
+    material.depthTest = true;
     material.useScreenCoordinates = false;
 
     this.label = new THREE.Sprite(material);
-    this.label.scale.set( 40, 20, 1 );
+    this.label.scale.set(40, 20, 1);
     this.label.center.x = 0.25;
     this.label.translateY(2);
 
@@ -47,14 +53,14 @@ class Marker {
   }
 
   createPoint() {
-    this.point = new THREE.Mesh( this.geometry, this.material );
+    this.point = new THREE.Mesh(this.geometry, this.material);
     this.point.material.color.set(this.pointColor);
     this.group.add(this.point);
     elements.markerPoint.push(this.point);
   }
 
   createGlow() {
-    this.glow = new THREE.Mesh( this.geometry, this.material.clone() );
+    this.glow = new THREE.Mesh(this.geometry, this.material.clone());
     this.glow.material.color.set(this.glowColor);
     this.glow.material.opacity = 0.6;
     this.group.add(this.glow);
@@ -62,17 +68,17 @@ class Marker {
   }
 
   animateGlow() {
-    if(!this.isAnimating) {
-      if(Math.random() > 0.99) {
+    if (!this.isAnimating) {
+      if (Math.random() > 0.99) {
         this.isAnimating = true;
       }
-    } else if(this.isAnimating) {
+    } else if (this.isAnimating) {
       this.glow.scale.x += 0.025;
       this.glow.scale.y += 0.025;
       this.glow.scale.z += 0.025;
       this.glow.material.opacity -= 0.005;
 
-      if(this.glow.scale.x >= 4) {
+      if (this.glow.scale.x >= 4) {
         this.glow.scale.x = 1;
         this.glow.scale.y = 1;
         this.glow.scale.z = 1;
@@ -83,17 +89,19 @@ class Marker {
   }
 
   setPosition() {
-    const {x, y, z} = this.cords
-    this.group.position.set(-x, y, -z)
+    const { x, y, z } = this.cords;
+    this.group.position.set(-x, y, -z);
   }
 
   createText() {
-    const element = document.createElement('canvas');
+    const element = document.createElement("canvas");
     const canvas = new fabric.Canvas(element);
 
     const text = new fabric.Text(this.labelText, {
-      left: 0, top: 0, fill: this.textColor, 
-      fontFamily: 'Open Sans',
+      left: 0,
+      top: 0,
+      fill: this.textColor,
+      fontFamily: "Open Sans",
     });
 
     canvas.add(text);

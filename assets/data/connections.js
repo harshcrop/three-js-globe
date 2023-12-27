@@ -1,12 +1,14 @@
 data.connections = {
   Colombia: [
+    "New York",
+    "Ashbern",
     "Ecuador",
     "Cuba",
     // "Mexico",
     "Peru",
     "Venezuela, RB",
     "Guyana",
-    "United States",
+    // "United States",
   ],
   "South Sudan": [
     "Nigeria",
@@ -44,7 +46,7 @@ data.connections = {
     "Colombia",
     "Peru",
     "Venezuela, RB",
-    "United States",
+    // "United States",
   ],
   Fiji: [
     "Tuvalu",

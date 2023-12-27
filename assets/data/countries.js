@@ -43,7 +43,7 @@ data.countries = [
   { name: "Denmark", latitude: "55.6763", longitude: "12.5681" },
   { name: "Romania", latitude: "44.4479", longitude: "26.0979" },
   //   { name: "Mexico", latitude: "19.427", longitude: "-99.1276" },
-  { name: "United States", latitude: "38.8895", longitude: "-77.032" },
+  //   { name: "United States", latitude: "38.8895", longitude: "-77.032" },
   { name: "Greenland", latitude: "64.1836", longitude: "-51.7214" },
   { name: "Iceland", latitude: "64.1353", longitude: "-21.8952" },
   { name: "Ecuador", latitude: "-0.229498", longitude: "-78.5243" },

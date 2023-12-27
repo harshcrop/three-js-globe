@@ -12,7 +12,7 @@ const SouthAmerica = [
   "Cuba",
 ];
 
-const NorthAmerica = ["Mexico", "United States", "Greenland", "Iceland"];
+// const NorthAmerica = ["Mexico", "United States", "Greenland", "Iceland"];
 
 const Europe = [
   "Norway",
@@ -99,7 +99,7 @@ const connections = {
     "Peru",
     "Venezuela, RB",
     "Guyana",
-    "United States",
+    // "United States",
   ],
   "South Sudan": [
     "Nigeria",
