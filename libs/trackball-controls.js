@@ -5,7 +5,7 @@ THREE.TrackballControls = function (object, domElement) {
     ROTATE: 0,
     ZOOM: 0,
     PAN: 2,
-    TOUCH_ROTATE: 3,
+    TOUCH_ROTATE: 0,
     TOUCH_ZOOM_PAN: 0,
   };
 
