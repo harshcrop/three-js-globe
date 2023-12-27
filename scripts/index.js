@@ -146,6 +146,6 @@ function animate(app) {
   }
 
   if (animations.rotateGlobe) {
-    groups.globe.rotation.y -= 0.0025;
+    groups.globe.rotation.y -= 0.0005;
   }
 }

@@ -4,22 +4,22 @@ class Globe {
     this.geometry = new THREE.SphereGeometry(this.radius, 64, 64);
 
     groups.globe = new THREE.Group();
-    groups.globe.name = 'Globe';
+    groups.globe.name = "Globe";
 
     this.initGlobe();
-    
+
     return groups.globe;
   }
 
   initGlobe() {
     const scale = config.scale.globeScale;
     this.globeMaterial = this.createGlobeMaterial();
-    this.globe = new THREE.Mesh( this.geometry, this.globeMaterial );
+    this.globe = new THREE.Mesh(this.geometry, this.globeMaterial);
     this.globe.scale.set(scale, scale, scale);
     elements.globe = this.globe;
-    
+
     groups.map = new THREE.Group();
-    groups.map.name = 'Map';
+    groups.map.name = "Map";
 
     groups.map.add(this.globe);
     groups.globe.add(groups.map);
@@ -27,33 +27,33 @@ class Globe {
 
   initAtmosphere() {
     this.atmosphereMaterial = this.createGlobeAtmosphere();
-    this.atmosphere = new THREE.Mesh( this.geometry, this.atmosphereMaterial )
+    this.atmosphere = new THREE.Mesh(this.geometry, this.atmosphereMaterial);
     this.atmosphere.scale.set(1.2, 1.2, 1.2);
     elements.atmosphere = this.atmosphere;
 
     groups.atmosphere = new THREE.Group();
-    groups.atmosphere.name = 'Atmosphere';
+    groups.atmosphere.name = "Atmosphere";
 
     groups.atmosphere.add(this.atmosphere);
-    groups.globe.add(groups.atmosphere); 
+    groups.globe.add(groups.atmosphere);
   }
 
   createGlobeMaterial() {
-    const texture = loader.load('null')
-    console.log(texture)
+    const texture = loader.load("null");
+    console.log(texture);
 
     const shaderMaterial = new THREE.ShaderMaterial({
-      uniforms: {texture: { value:  texture }},
+      uniforms: { texture: { value: texture } },
       vertexShader: shaders.globe.vertexShader,
       fragmentShader: shaders.globe.fragmentShader,
       blending: THREE.AdditiveBlending,
-      transparent: true,
-    })
+      transparent: false,
+    });
 
     const normalMaterial = new THREE.MeshBasicMaterial({
       blending: THREE.AdditiveBlending,
-      transparent: true,
-    })
+      transparent: false,
+    });
 
     return shaderMaterial;
   }
@@ -64,8 +64,8 @@ class Globe {
       fragmentShader: shaders.atmosphere.fragmentShader,
       blending: THREE.AdditiveBlending,
       side: THREE.BackSide,
-      transparent: true,
-      uniforms: {}
+      transparent: false,
+      uniforms: {},
     });
   }
 }
