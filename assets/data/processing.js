@@ -93,6 +93,11 @@ function selectCountries(list, countries) {
 
 const connections = {
   Colombia: [
+    "New York",
+    "Ashbern",
+    "Phoenix",
+    "Amsterdam",
+    "Lithunia",
     // "Ecuador",
     // "Cuba",
     // "Mexico",
@@ -100,11 +105,6 @@ const connections = {
     // "Venezuela, RB",
     // "Guyana",
     // "United States",
-    "New York",
-    "Ashbern",
-    "Phoenix",
-    "Amsterdam",
-    "Lithunia",
   ],
   // "South Sudan": [
   //   "Nigeria",
