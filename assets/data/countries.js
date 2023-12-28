@@ -5,7 +5,7 @@ data.countries = [
   { name: "Amsterdam", latitude: "52.356210", longitude: "4.866876" },
   { name: "Lithunia", latitude: "55.291551", longitude: "23.902315" },
   //   { name: "Pakistan", latitude: "30.5167", longitude: "72.8" },
-  //   { name: "India", latitude: "28.6353", longitude: "77.225" },
+  { name: "India", latitude: "28.6353", longitude: "77.225" },
   //   { name: "Nepal", latitude: "27.6939", longitude: "85.3157" },
   //   { name: "Kazakhstan", latitude: "51.1879", longitude: "71.4382" },
   //   { name: "Maldives", latitude: "4.1742", longitude: "73.5109" },
